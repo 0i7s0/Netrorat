@@ -31,7 +31,9 @@ jobs:
 
       - name: Build with Buildozer
         run: |
-          buildozer android debug
+          # قبول جميع تراخيص أندرويد تلقائياً
+          mkdir -p ~/.android && touch ~/.android/repositories.cfg
+          yes | buildozer android debug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4

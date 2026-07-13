@@ -11,8 +11,8 @@ from kivy.clock import Clock
 Window.size = (1400, 800)
 Window.clearcolor = (0.02, 0.02, 0.04, 1)
 
-HOST = 'myrat5555.pagekite.me'
-PORT = 443
+HOST = 'mptv5iun19.localto.net'
+PORT = 2655
 
 FULL_KV = '''
 <GlitchLabel@Label>:

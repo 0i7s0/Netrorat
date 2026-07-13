@@ -20,18 +20,17 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
             build-essential ccache git libncurses5-dev libncursesw5-dev \
-            libtinfo5 libffi-dev libssl-dev libncurses5-dev cmake \
-            pkg-config autoconf libtool libcurl4-openssl-dev \
-            zip unzip openjdk-17-jdk
+            libtinfo5 libffi-dev libssl-dev cmake pkg-config autoconf \
+            libtool libcurl4-openssl-dev zip unzip openjdk-17-jdk
 
-      - name: Install Buildozer and Cython
+      - name: Install Buildozer
         run: |
           pip install --upgrade pip
           pip install --upgrade buildozer cython
 
       - name: Build with Buildozer
         run: |
-          # قبول جميع تراخيص أندرويد تلقائياً
+          # الموافقة التلقائية على رخص أندرويد
           mkdir -p ~/.android && touch ~/.android/repositories.cfg
           yes | buildozer android debug
 
